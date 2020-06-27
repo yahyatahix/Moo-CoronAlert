@@ -35,6 +35,26 @@ public class Utilisateur extends CasContact {
 	public void setCasContacts(List<CasContact> casContacts) {
 		this.casContacts = casContacts;
 	}
-	
-	
+	public void addCasContact(CasContact newCas) {
+		this.casContacts.add(newCas);
+	}
+	public void televerser(String code) {
+		this.casContacts.forEach(c->{
+			if(c.getCodes().contains(code)) {
+				notifierCitoyen(c.getCin());
+			}
+		});
+	}
+
+	private void notifierCitoyen(String cin) {
+		System.out.println("Message sent to citoyen has cin =  "+cin );
+		
+	}
 }
+
+
+
+
+
+
+
