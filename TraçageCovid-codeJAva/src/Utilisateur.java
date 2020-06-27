@@ -42,6 +42,7 @@ public class Utilisateur extends CasContact {
 		this.casContacts.forEach(c->{
 			if(c.getCodes().contains(code)) {
 				notifierCitoyen(c.getCin());
+				c.setEtat(true);
 			}
 		});
 	}
